@@ -1,0 +1,40 @@
+<html>
+
+
+
+<body onload="takevalue()">
+<span id="result"></span>
+<script>
+function takevalue()
+{
+	var fullname = sessionStorage.getItem("fullname");
+    var email = sessionStorage.getItem("email");
+	var education=sessionStorage.getItem("education");
+    var address = sessionStorage.getItem("address");
+	var mobile = sessionStorage.getItem("mobile");
+    var year= sessionStorage.getItem("year");
+	var hobbies=sessionStorage.getItem("hobbies");
+	var grade=sessionStorage.getItem("grade");
+	var skills=sessionStorage.getItem("skills");
+    var sliderValue = sessionStorage.getItem("sliderValue");
+	var genderselection = sessionStorage.getItem("genderselection");
+	
+	
+	
+	
+	document.write("<head><h1>Form is successfully submited</h1>");
+	document.write("<BODY><table border = 1 style='border: 2px solid black;text-align:center;width:20%;'><tr><th>Full Name</th><th>Gender</th><th>EmailId</th><th>Education</th><th>Address</th><th>Mobile</th><th>Year</th><th>Hobbies</th><th>Grade</th><th>Skills</th><th>Skills level</th></tr><tr> <td>"+fullname+"</td><td>"+genderselection+"</td><td>"+email+"</td><td>"+education+"</td><td>"+address+"</td><td>"+mobile+"</td><td>"+year+"</td><td>"+hobbies+"</td><td>"+grade+"</td><td>"+skills+"</td><td>"+sliderValue+"</td></tr></table></BODY>");
+	/*document.write("your Information:<br><br>"+"Full Name :"+fullname+"<br");
+	 document.write("your Information:<br><br>"+"EmailId :"+email+"<br");
+	 document.write("your Information:<br><br>"+"Education :"+education+"<br");
+	 document.write("your Information:<br><br>"+"Address :"+address+"<br");
+	 document.write("your Information:<br><br>"+"Mobile :"+mobile+"<br");
+	 document.write("your Information:<br><br>"+"Year :"+year+"<br");
+	 document.write("your Information:<br><br>"+"Hobbies :"+hobbies+"<br");
+	 document.write("your Information:<br><br>"+"Grade :"+grade+"<br");
+	 document.write("your Information:<br><br>"+"Skills :"+skills+"<br");*/
+}
+</script>
+</center>
+</body>
+</html>

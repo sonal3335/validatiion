@@ -1,0 +1,147 @@
+ body{  
+background-color:rgb(128,128,128);
+background-size:cover;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+ 
+
+}  
+
+
+.container { 
+/*background: black;
+        color: white;
+        border-radius: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+ padding: 25px 50px;*/
+ 
+background: black;
+color: white;
+width:12cm;
+padding:20px 20px;
+border-radius:10px;
+
+ margin-top:20px;
+  margin-bottom:20px;
+ 
+ 
+}  
+
+input[type="text"],input[type="radio"],input[type=textarea],select{
+	/*width: 25%;
+  padding-left:20px;
+ 
+ margin-left:4px;
+  border-radius:7px;*/
+  
+  padding:3px;
+  margin:5px;
+  font-size:12px;
+  border-radius:10px;
+  border:1px solid white;
+  width:4cm;
+  text-align:center;
+  }
+
+ 
+ 
+ /*input[type=textarea]{  
+  width: 25%;
+  padding-right:20px;
+  
+ margin-left:4px;
+  border-radius:7px;
+  
+
+} */
+/*select{
+	width:25%
+	
+
+  padding: 6px 4px;
+   margin-left:4px;
+ text-align:center;
+  border-radius:10px;
+}*/
+ 
+            
+         
+
+#btn {  
+   /*background-color:green;
+  color: black;
+  padding: 12px 20px;  
+  
+  margin-left:25px;
+  border: none;  
+  cursor: pointer;  
+  width: 45%;  
+ 
+  border-radius:8px;*/
+  margin-top:7px;
+  font-weight:bold;
+  padding:4px;
+  background-color:green;
+  border-radius:8px;
+  border:1px solid white;
+   width:4cm;
+   padding:8px;
+}  
+#btn:hover {  
+ background-color:orange;
+}  
+
+label{
+	/*width:80px;
+	text-align:left;
+	display:inline-block;
+	font-size:17px;
+	font-family:Arial (sans-serif);
+	margin-right:20px;
+	 padding-left:20px;*/
+	 width:200px;
+	 display:inline-block;
+	 /*margin:0.2cm;*/
+	 margin-top:1px;
+	 font-size:20px;
+	 font-family:sans-serif;
+	  text-align:left;
+	  padding-left:20px;
+	 
+}
+#r1,#r2{
+	text-align:center;
+	font-family:Arial (sans-serif);
+	/* margin-left:4px;*/
+	font-size:12px;
+
+	width:30px;
+	
+	height:12px;
+	border-radius:7px;
+	padding:4px;
+  margin:5px;
+     
+}
+span{
+	
+	color:red;
+     padding-top:1px;
+	
+	
+}
+.slidecontainer{
+	padding-left:200px;
+	padding-top:4px;
+	
+}
+
+
+

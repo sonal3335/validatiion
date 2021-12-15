@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>  
+<head> 
+
+ <meta charset="utf-8"> 
+ <link rel="stylesheet" type="text/css" href="newstyle.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="nextpage.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+<title>  
+Registration Page  
+</title>  
+</head>  
+<body>  
+<br>  
+<br>  
+<form name="registration" action="secondpage.html" method="post" autocomplete="off" onsubmit="takevalue()"> 
+  
+  
+  <div class="container" align="center">
+  
+<label><b>Full Name</b></label><input type="text" name="fullname" id="fullname"><br>
+<span id="userr"></span><br>  
+<label><b>Email</b></label><input type="text" id="email" name="email"/><br> 
+ <span id="emaill"></span><br>  
+<label><b>Education</b></label><select id="education" value=""><option><b>B.E|B.TECH</b></option>  
+								   <option><b>BCA|MCA</b></option>  
+								   <option><b>DIPLOMA</b></option>  
+								   <option><b>SSC</b></option>  
+								   <option><b>HSC</b></option></select><br>
+<span id="educationn"></span><br>  
+<label><b>Year</b></label><input type="text" name="year" id="year"><br>
+<span id="yearr"></span><br>
+<label><b>Grade</b></label><input type="text" name="grade" id="grade"><br>
+<span id="gradee"></span><br>
+
+<label><b>Gender</b></label><input type="radio" name="gender" value="male" id="r1"><b>Male</b><input type="radio" name="gender" value="female" id="r2"><b>Female</b><br>
+<span id="genderr"></span><br>
+  
+<label><b>Phone</b></label><input type="text" name="phone" id="mobile"><br>
+<span id="mobilee"></span><br>
+
+<label><b>Address</b></label><input type="textarea"   id="address"><br>
+<span id="add"></span><br>
+
+<label><b>Skills</b></label><input type="text" name="skills" id="skills">
+<div class="slidecontainer"><input type="range" min="0" max="10" value="50" class="slider" id="myRange"><p>Value: <span id="demo"></span></p>
+</div>
+<span id="skillss"></span><br>
+
+
+
+
+<label><b>Hobbies</b></label><input type="text" name="hobbies" id="hobbies"><br>
+<span id="hoby"></span><br> 
+  
+<button onclick="return validation();"  id="btn">Submit</button>
+ 
+</div>
+</form>
+ </body>
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+
+function takevalue()
+{
+     	 
+	var fullname = document.getElementById('fullname').value;
+	var email = document.getElementById('email').value;
+	var education=document.getElementById("education").value;
+	var address = document.getElementById('address').value;
+	var r1=document.getElementById("r1").value;
+	var r2=document.getElementById("r2").value;
+	var mobile = document.getElementById('mobile').value;
+	var year= document.getElementById('year').value;
+	var hobbies=document.getElementById("hobbies").value;
+	var grade=document.getElementById("grade").value;
+	var skills=document.getElementById("skills").value;
+	var sliderValue = document.getElementById("myRange").value;
+	var genderselection =""
+	 
+	if(document.getElementById('r1').checked == true) 
+	{   
+       genderselection = "Male"   
+	}
+	else 
+	{  
+        genderselection = "NULL"   
+	}  
+	 
+	if (genderselection =="NULL")
+	{
+		if(document.getElementById('r2').checked == true) 
+		{   
+			genderselection = "Female"   
+		}
+		else 
+		{  
+			genderselection = ""   
+		}  
+	} 
+	 
+	 
+	 
+	sessionStorage.setItem("fullname", fullname);
+	sessionStorage.setItem("email", email);
+	sessionStorage.setItem("education", education);
+	sessionStorage.setItem("address", address);
+	sessionStorage.setItem("mobile", mobile);
+	sessionStorage.setItem("year", year);
+	sessionStorage.setItem("hobbies", hobbies);
+	sessionStorage.setItem("grade", grade);
+	sessionStorage.setItem("skills", skills);
+	sessionStorage.setItem("sliderValue", sliderValue);
+	sessionStorage.setItem("genderselection", genderselection);
+
+	
+	
+	
+	
+	
+ 
+}
+
+
+function validation()
+{
+
+	
+	
+    var regEx = /^[0-9a-zA-Z]+$/;
+    var fullname = document.getElementById('fullname').value;
+    var email = document.getElementById('email').value;
+    var address = document.getElementById('address').value;
+    var mobile = document.getElementById('mobile').value;
+    var year= document.getElementById('year').value;
+	var hobbies=document.getElementById("hobbies").value;
+	var grade=document.getElementById("grade").value;
+	 var skills=document.getElementById("skills").value;
+	
+ //fullnamename validation
+if(fullname == "")
+{
+
+ document.getElementById('userr').innerHTML="***Please Enter the name";
+return false;
+}
+
+
+ if(!isNaN(fullname))
+{
+ document.getElementById('userr').innerHTML="**name should be in character only";
+return false;
+}
+
+   if(fullname.length<3)
+{
+ document.getElementById('userr').innerHTML="**username must be 3 character";
+return false;
+}  
+
+//email validation
+  if(email=="")
+{
+ document.getElementById('emaill').innerHTML="**Please Enter Your Email";
+return false;
+}
+
+var at= email.indexOf("@");
+var dot = email.lastIndexOf(".");
+
+ if(at<1||dot+2>=email.length){
+
+ document.getElementById('emaill').innerHTML="**Not a valid email";
+return false;
+}
+
+/*year validation*/
+ if(year==""){
+ 
+  document.getElementById('yearr').innerHTML="**please enter the year";
+	  return false;
+ }
+ 
+ 
+ if (isNaN(year))
+{  
+document.getElementById('yearr').innerHTML="**year must be in numbers";
+	  return false;
+}
+
+
+  if(year.length!=4)
+ {
+ document.getElementById('yearr').innerHTML="**year must be in 4 digits";
+	  return false;
+
+ }
+ 
+ 
+ //grade validation
+ if(grade==""){
+ 
+  document.getElementById('gradee').innerHTML="**please enter the grade";
+	  return false;
+ }
+ 
+ 
+ //if(grade!=(regEx))
+ 
+   if (!grade.match(regEx))
+ 
+     {
+	
+     document.getElementById('gradee').innerHTML="please enter alphanumeric only";
+	  return false;
+     }
+	 
+	 
+
+//mobile validation
+
+if(mobile==""){
+ 
+ document.getElementById('mobilee').innerHTML="**please enter the mobile number";
+	  return false;
+ }
+
+ if(isNaN(mobile))
+{
+   document.getElementById('mobilee').innerHTML="**phone no. should be in digit";
+return false;
+}
+  else if(mobile.length!=10)
+  {
+      document.getElementById('mobilee').innerHTML="**must be 10 digit number";
+	  return false;
+  }
+  
+  //address validation
+  if(address==""){
+ 
+ document.getElementById('add').innerHTML="**please enter the year";
+	  return false;
+ }
+  
+  
+   if(address.length<4)
+{
+     
+  document.getElementById('add').innerHTML="Address should be atleast 10 characters";
+	  return false;
+  
+}
+
+//skills validation
+
+if(skills==""){
+ 
+ document.getElementById('skillss').innerHTML="**please enter the skills";
+	  return false;
+ }
+ 
+  if (!skills.match(regEx))
+ 
+     {
+	
+      document.getElementById('skillss').innerHTML="please enter alphanumeric only";
+	  return false;
+     }
+   
+   //hobbies validation
+   
+if(hobbies==""){
+ 
+ document.getElementById('hoby').innerHTML="**please enter your hobbies";
+	  return false;
+ }
+ if (!hobbies.match(regEx))
+ 
+     {
+	
+      document.getElementById('hoby').innerHTML="please enter alphanumeric only";
+	  return false;
+     }
+ 
+
+
+//return takevalue();
+
+
+
+}
+
+</script>
+
+
+</html>
+
+
+  
